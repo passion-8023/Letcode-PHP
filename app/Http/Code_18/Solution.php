@@ -17,7 +17,7 @@ class Solution
      * @param Integer $target
      * @return Integer[][]
      *
-     * nums = [1,0,-1,0,-2,2], target = 0
+     * nums = [1,0,-1,0,-2,2], target = 0   [-2, -1, 0, 0, 1, 2]
      */
     function fourSum($nums, $target) {
         $res = [];
@@ -30,6 +30,46 @@ class Solution
             if ($i > 0 && $nums[$i] == $nums[$i - 1]) {
                 continue;
             }
+            if ($nums[$i] + $nums[$i+1] + $nums[$i+2] + $nums[$i+3] > $target) {
+                break;
+            }
+            if ($nums[$i] + $nums[$len-3] + $nums[$len-2] + $nums[$len-1] < $target) {
+                continue;
+            }
+
+            for ($j = $i + 1; $j < $len - 2; $j++) {
+                if ($j > $i + 1 && $nums[$j] == $nums[$j - 1]) {
+                    continue;
+                }
+                if ($nums[$i] + $nums[$j] + $nums[$j+1] + $nums[$j+2] > $target) {
+                    break;
+                }
+                if ($nums[$i] + $nums[$j] + $nums[$len-2] + $nums[$len-1] < $target) {
+                    continue;
+                }
+                $left = $j + 1;
+                $right = $len - 1;
+                while ($left < $right) {
+                    $sum = $nums[$i] + $nums[$j] + $nums[$left] + $nums[$right];
+                    if ($sum == $target) {
+                        $res[] = [$nums[$i], $nums[$j], $nums[$left], $nums[$right]];
+                        while ($left < $right && $nums[$left] == $nums[$left+1]) {
+                            $left++;
+                        }
+                        $left++;
+                        while ($left < $right && $nums[$right] == $nums[$right-1]) {
+                            $right--;
+                        }
+                        $right--;
+                    } else if ($sum > $target) {
+                        $right--;
+                    } else {
+                        $left++;
+                    }
+                }
+
+            }
         }
+        return $res;
     }
 }
