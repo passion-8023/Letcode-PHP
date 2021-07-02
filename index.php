@@ -6,6 +6,7 @@ require_once('app/Http/Code_19/Solution.php');
 require_once('app/Http/Code_19/Test.php');
 require_once('app/Http/Code_20/Solution.php');
 require_once('app/Http/Code_20/Solution_1.php');
+require_once('app/Http/Code_22/Solution.php');
 
 //use App\Http\Code_12\Solution as Code_12;
 //$num = 1945;
@@ -55,6 +56,89 @@ require_once('app/Http/Code_20/Solution_1.php');
 //$res = $code_20_1->isValid($s);
 //echo "<pre>";
 //var_dump($res);
+
+//use App\Http\Code_22\Solution as Code_22;
+//$n = 3;
+//$code_22 = new Code_22();
+//$res = $code_22->generateParenthesis($n);
+//echo "<pre>";
+//var_dump($res);
+
+
+
+//对以下数组进行排序，
+//arr = (
+//[4,5,9,4,1],
+// [11,14,9,6,20],
+// [21,44,90,16,21],
+// [16,34,99,600,230],
+// [121,18,89,60,33]
+//)
+//期望结果：数组arr[0][0]为最大值，arr[4][4]为第二大，arr[0][1]为第三大，arr[4][3]为第四大，依此类推arr[2][2]为最小值
+//arr = (
+//[600, 121, 90, 60, 34],
+// [21, 20, 16, 14, 9],
+// [6, 4, 1, 4, 5],
+// [9, 11, 16, 18, 21],
+// [33, 44, 89, 99, 230]
+
+
+$arr = [
+    [4,5,9,4,1],
+    [11,14,9,6,20],
+    [21,44,90,16,21],
+    [16,34,99,600,230],
+    [121,18,89,60,33]
+];
+function arraySort($arr){
+    $newArr = [];
+    $res = [];
+    for ($i = 0; $i < count($arr); $i++) {
+        $newArr = array_merge($newArr, $arr[$i]);
+    }
+    rsort($newArr);
+    $len = count($newArr);
+    $i = 0;
+    $tmp = true;
+    foreach ($arr as $key => $value) {
+        foreach ($value as $k => $v) {
+            $res[$key][$k] = $newArr[$i];
+            if ($len % 2 == 0) {
+                if ($i+1 == $len-1 && $tmp) {
+                    $i++;
+                    $tmp = false;
+                    continue;
+                }
+            } else {
+                if ($i == $len - 1 && $tmp) {
+                    $i--;
+                    $tmp = false;
+                    continue;
+                }
+            }
+            $tmp ? $i += 2 : $i -= 2;
+        }
+    }
+    return $res;
+}
+echo "<pre>";
+print_r(arraySort($arr));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
