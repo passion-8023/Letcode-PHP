@@ -7,6 +7,9 @@ require_once('app/Http/Code_19/Test.php');
 require_once('app/Http/Code_20/Solution.php');
 require_once('app/Http/Code_20/Solution_1.php');
 require_once('app/Http/Code_22/Solution.php');
+require_once('app/Http/Code_25/Solution.php');
+require_once('app/Http/Code_25/ListNode.php');
+require_once('app/Http/Code_28/Solution.php');
 
 //use App\Http\Code_12\Solution as Code_12;
 //$num = 1945;
@@ -82,47 +85,84 @@ require_once('app/Http/Code_22/Solution.php');
 // [9, 11, 16, 18, 21],
 // [33, 44, 89, 99, 230]
 
+//
+//$arr = [
+//    [4,5,9,4,1],
+//    [11,14,9,6,20],
+//    [21,44,90,16,21],
+//    [16,34,99,600,230],
+//    [121,18,89,60,33]
+//];
+//function arraySort($arr){
+//    $newArr = [];
+//    $res = [];
+//    for ($i = 0; $i < count($arr); $i++) {
+//        $newArr = array_merge($newArr, $arr[$i]);
+//    }
+//    rsort($newArr);
+//    $len = count($newArr);
+//    $i = 0;
+//    $tmp = true;
+//    foreach ($arr as $key => $value) {
+//        foreach ($value as $k => $v) {
+//            $res[$key][$k] = $newArr[$i];
+//            if ($len % 2 == 0) {
+//                if ($i+1 == $len-1 && $tmp) {
+//                    $i++;
+//                    $tmp = false;
+//                    continue;
+//                }
+//            } else {
+//                if ($i == $len - 1 && $tmp) {
+//                    $i--;
+//                    $tmp = false;
+//                    continue;
+//                }
+//            }
+//            $tmp ? $i += 2 : $i -= 2;
+//        }
+//    }
+//    return $res;
+//}
+//echo "<pre>";
+//print_r(arraySort($arr));
 
-$arr = [
-    [4,5,9,4,1],
-    [11,14,9,6,20],
-    [21,44,90,16,21],
-    [16,34,99,600,230],
-    [121,18,89,60,33]
-];
-function arraySort($arr){
-    $newArr = [];
-    $res = [];
-    for ($i = 0; $i < count($arr); $i++) {
-        $newArr = array_merge($newArr, $arr[$i]);
-    }
-    rsort($newArr);
-    $len = count($newArr);
-    $i = 0;
-    $tmp = true;
-    foreach ($arr as $key => $value) {
-        foreach ($value as $k => $v) {
-            $res[$key][$k] = $newArr[$i];
-            if ($len % 2 == 0) {
-                if ($i+1 == $len-1 && $tmp) {
-                    $i++;
-                    $tmp = false;
-                    continue;
-                }
-            } else {
-                if ($i == $len - 1 && $tmp) {
-                    $i--;
-                    $tmp = false;
-                    continue;
-                }
-            }
-            $tmp ? $i += 2 : $i -= 2;
-        }
-    }
-    return $res;
-}
+
+//$a =  100;
+//$b = &$a;
+//
+//$b = 88;
+//echo "<pre>";
+//print_r($a);
+
+
+//use App\Http\Code_25\Solution as Code_25;
+//use App\Http\Code_25\ListNode;
+//$head = new ListNode(1);
+//$head->addElement($head, new ListNode(2));
+//$head->addElement($head, new ListNode(3));
+//$head->addElement($head, new ListNode(4));
+//$head->addElement($head, new ListNode(5));
+//$head->addElement($head, new ListNode(6));
+//$head->addElement($head, new ListNode(7));
+//$head->addElement($head, new ListNode(8));
+//
+//$k = 3;
+//$code_25 = new Code_25();
+//$res = $code_25->reverseKGroup($head, $k);
+////$res = $code_25->reverseNode($head);
+//echo "<pre>";
+//var_dump($res);
+
+
+use App\Http\Code_28\Solution as Code_28;
+
+$k = 3;
+$code_28 = new Code_28();
+$res = $code_28->strStr('abeababeabf', 'abeabf');
 echo "<pre>";
-print_r(arraySort($arr));
+var_dump($res);
+
 
 
 
