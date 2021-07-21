@@ -10,6 +10,7 @@ require_once('app/Http/Code_22/Solution.php');
 require_once('app/Http/Code_25/Solution.php');
 require_once('app/Http/Code_25/ListNode.php');
 require_once('app/Http/Code_28/Solution.php');
+require_once('app/Http/Code_29/Solution.php');
 
 //use App\Http\Code_12\Solution as Code_12;
 //$num = 1945;
@@ -155,13 +156,31 @@ require_once('app/Http/Code_28/Solution.php');
 //var_dump($res);
 
 
-use App\Http\Code_28\Solution as Code_28;
+//use App\Http\Code_28\Solution as Code_28;
+//
+//$k = 3;
+//$code_28 = new Code_28();
+//$res = $code_28->strStr('abeababeabf', 'abeabf');
+//echo "<pre>";
+//var_dump($res);
 
-$k = 3;
-$code_28 = new Code_28();
-$res = $code_28->strStr('abeababeabf', 'abeabf');
-echo "<pre>";
-var_dump($res);
+
+//use App\Http\Code_29\Solution as Code_29;
+//
+//$dividend = 11;
+//$divisor = 3;
+//$code_29 = new Code_29();
+//$res = $code_29->divide($dividend, $divisor);
+//echo "<pre>";
+//var_dump($res);
+
+//$res = 3 << 2;
+//var_dump($res);
+
+
+
+
+
 
 
 
