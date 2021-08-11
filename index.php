@@ -137,23 +137,23 @@ require_once('app/Http/Code_29/Solution.php');
 //print_r($a);
 
 
-//use App\Http\Code_25\Solution as Code_25;
-//use App\Http\Code_25\ListNode;
-//$head = new ListNode(1);
-//$head->addElement($head, new ListNode(2));
-//$head->addElement($head, new ListNode(3));
-//$head->addElement($head, new ListNode(4));
-//$head->addElement($head, new ListNode(5));
-//$head->addElement($head, new ListNode(6));
-//$head->addElement($head, new ListNode(7));
-//$head->addElement($head, new ListNode(8));
-//
-//$k = 3;
-//$code_25 = new Code_25();
-//$res = $code_25->reverseKGroup($head, $k);
-////$res = $code_25->reverseNode($head);
-//echo "<pre>";
-//var_dump($res);
+use App\Http\Code_25\Solution as Code_25;
+use App\Http\Code_25\ListNode;
+$head = new ListNode(1);
+$head->addElement($head, new ListNode(2));
+$head->addElement($head, new ListNode(3));
+$head->addElement($head, new ListNode(4));
+$head->addElement($head, new ListNode(5));
+$head->addElement($head, new ListNode(6));
+$head->addElement($head, new ListNode(7));
+$head->addElement($head, new ListNode(8));
+
+$k = 3;
+$code_25 = new Code_25();
+$res = $code_25->reverseKGroup($head, $k);
+//$res = $code_25->reverseNode($head);
+echo "<pre>";
+var_dump($res);
 
 
 //use App\Http\Code_28\Solution as Code_28;
